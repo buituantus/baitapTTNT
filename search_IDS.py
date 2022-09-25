@@ -45,7 +45,8 @@ def search_IDS(tree, deep: int, value ):
 			node_tree=node_tree.child
 			
 			while(node_tree!=None):
-				open_stack=Tree_and_stack.push_stack(open_stack, node_tree)
+				if node_tree.deep<=deep:
+					open_stack=Tree_and_stack.push_stack(open_stack, node_tree)
 				canh_ke.append(node_tree.data)
 				node_tree=node_tree.next
 		cap_CanhKe[tmp]=canh_ke
